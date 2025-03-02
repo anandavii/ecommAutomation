@@ -13,4 +13,4 @@ Feature: New User Registration
     And User accepts the terms and conditions
     When User clicks on the Continue button
     Then User should see the registration successful message
-    Then User clicks on the Continue button
+    Then User verified after registration Continue button is displayed

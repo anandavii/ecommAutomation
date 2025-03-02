@@ -5,13 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.RegistrationPage;
-import utility.BrowserDriver;
 
 import static org.junit.Assert.assertTrue;
 
-public class RegisterDef extends BrowserDriver {
+public class RegisterDef {
 
-    private RegistrationPage registrationPage = new RegistrationPage(driver);
+    public RegistrationPage registrationPage = new RegistrationPage();
 
     //Step1. User navigates to the website
     @Given("User opens application homepage")
@@ -35,18 +34,21 @@ public class RegisterDef extends BrowserDriver {
         registrationPage.enterRegisterationDetails(table);
     }
     @When("User accepts the terms and conditions")
-    public void user_accepts_the_terms_and_conditions() throws InterruptedException {
+    public void user_accepts_the_terms_and_conditions() {
         registrationPage.clickOniAgree();
     }
     @When("User clicks on the Continue button")
-    public void user_clicks_on_the_Continue_button() throws InterruptedException {
+    public void user_clicks_on_the_Continue_button() {
         registrationPage.clickOnContinue();
-        Thread.sleep(10000);
     }
     @Then("User should see the registration successful message")
     public void user_should_see_the_registration_successful_message() {
-        assertTrue("Registration success message not displayed", registrationPage.isRegisteratioSuccessful());
+        assertTrue("Registration success message not displayed", registrationPage.isRegisterationSuccessful());
     }
 
+    @Then("User verified after registration Continue button is displayed")
+    public void userVerifiedAfterRegistrationContinueButtonIsDisplayed() {
+        assertTrue("Post Registration Continue button is not displayed", registrationPage.isafterRegistration_Continue_ButtonDisplayed());
+    }
 }
 

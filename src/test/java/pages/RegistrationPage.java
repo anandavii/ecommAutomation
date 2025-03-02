@@ -1,13 +1,12 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utility.BrowserDriver;
+import utility.BaseClass;
 import java.util.UUID;
 
-public class RegistrationPage extends BrowserDriver {
+public class RegistrationPage extends BaseClass {
 // Locators for the Register Page
     @FindBy(xpath = "//span[text()='My Account']")
     private WebElement myAccount_Icon;
@@ -42,17 +41,20 @@ public class RegistrationPage extends BrowserDriver {
     @FindBy(xpath = "//input[@value='Continue']")
     private WebElement continue_Button;
 
+    @FindBy(xpath = "//a[text()='Continue']")
+    private WebElement afterRegistration_Continue_Button ;
+
     @FindBy(xpath = "//h1[text()='Your Account Has Been Created!']")
     private WebElement successMessage;
 
     //Initialize the elements
-    public RegistrationPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public RegistrationPage() {
+        PageFactory.initElements(BaseClass.getDriver(), this);
     }
 
     //Click on myAccountIcon
     public void clickOnMyAccount() {
-        BrowserDriver.waitForElementToBeClickable(myAccount_Icon,10);
+        BaseClass.waitForElementToBeClickable(myAccount_Icon,10);
         myAccount_Icon.click();
     }
 
@@ -63,12 +65,12 @@ public class RegistrationPage extends BrowserDriver {
 
     //Verify user is on the registration page
     public boolean isOnRegisterPage() {
-        return registerAccount_Label.isDisplayed();
+        return BaseClass.isDisplayed(registerAccount_Label);
     }
 
     // Generate random email
     private String generateRandomEmail() {
-        String uniqueEmail = "test" + UUID.randomUUID().toString() + "@myemail.com";
+        String uniqueEmail = "test" + UUID.randomUUID() + "@myemail.com";
         System.out.println(uniqueEmail);
         return uniqueEmail;
     }
@@ -94,7 +96,12 @@ public class RegistrationPage extends BrowserDriver {
     }
 
     //verify successful registration message
-    public boolean isRegisteratioSuccessful() {
-        return successMessage.isDisplayed();
+    public boolean isRegisterationSuccessful() {
+        return BaseClass.isDisplayed(successMessage);
+
+    }
+
+    public boolean isafterRegistration_Continue_ButtonDisplayed() {
+        return BaseClass.isDisplayed(afterRegistration_Continue_Button);
     }
 }
