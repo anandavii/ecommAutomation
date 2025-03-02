@@ -1,13 +1,18 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utility.BaseClass;
+import java.util.List;
 
 public class UserAccountPage {
+
     // Locators for User Account Page
+
+    //Continue button post user registration
+    @FindBy(xpath = "//a[text()='Continue']")
+    private WebElement afterRegistration_Continue_Button ;
 
     //My Account Label and links
     @FindBy(xpath = "//h2[text()='My Account']")
@@ -61,8 +66,66 @@ public class UserAccountPage {
     @FindBy(xpath = "//a[text()='Subscribe / unsubscribe to newsletter']")
     public WebElement subscribeToNewsletter_Link;
 
+    @FindBy(xpath = "//div[@class='list-group']//a[text()='Logout']")
+    public WebElement logout_Button;
+
     //Initialize webelements
     public UserAccountPage() {
         PageFactory.initElements(BaseClass.getDriver(), this);
     }
+
+    //check title of MyAccount page
+    public boolean isOnMyAccountByTitle() {
+        return BaseClass.isPageTitle("Your Account Has Been Created!");
+    }
+
+    // Verify labels on My Account page
+    public boolean verifyMyAccountLabels(List<String> expectedLabels) {
+        return BaseClass.verifyLabelsPresent(List.of(myAccount_Label, myOrders_Label, myAffiliateAccount_Label, newsletter_Label), expectedLabels);
+    }
+
+    // Verify the links under the My Account page
+    public boolean verifyMyAccountLink(String expectedText) {
+        List<WebElement> myAccountLinks = List.of(editAccount_Link, changePassword_Link, modifyAddress_Link, modifyWishlist_Link);
+        for (WebElement link : myAccountLinks) {
+            if (BaseClass.verifyText(link, expectedText)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Verify the links under the My Orders label
+    public boolean verifyMyOrdersLink(String expectedText) {
+        List<WebElement> myAccountLinks = List.of(viewOrderHistory_Link, downloads_Link, yourRewardPoints_Link, yourReturnRequests_Link, yourTransactions_Link, recurringPayments_Link);
+        for (WebElement link : myAccountLinks) {
+            if (BaseClass.verifyText(link, expectedText)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Verify the links under the My Affiliate label
+    public boolean verifyMyAffiliateLink(String expectedText) {
+        List<WebElement> myAccountLinks = List.of(registerForAnAffiliateAccount_Link);
+        for (WebElement link : myAccountLinks) {
+            if (BaseClass.verifyText(link, expectedText)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Verify the links under the Newsletter label
+    public boolean verifyNewsletterLink(String expectedText) {
+        List<WebElement> myAccountLinks = List.of(subscribeToNewsletter_Link);
+        for (WebElement link : myAccountLinks) {
+            if (BaseClass.verifyText(link, expectedText)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

@@ -84,4 +84,17 @@ public class BaseClass {
         }
     }
 
+    // Check if page title matches expected title
+    public static boolean isPageTitle(String expectedTitle) {
+        return getDriver().getTitle().equals(expectedTitle);
+    }
+
+    //verify the text of WebElement
+    public static boolean verifyText(WebElement element, String expectedText) {
+        try {
+            return element.getText().trim().equals(expectedText);
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }

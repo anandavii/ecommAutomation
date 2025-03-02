@@ -47,9 +47,17 @@ public class RegistrationPage extends BaseClass {
     @FindBy(xpath = "//h1[text()='Your Account Has Been Created!']")
     private WebElement successMessage;
 
+    @FindBy(xpath = "//div[@class='list-group']//a[text()='Logout']")
+    public WebElement logout_Button;
+
     //Initialize the elements
     public RegistrationPage() {
         PageFactory.initElements(BaseClass.getDriver(), this);
+    }
+
+    //check title of homepage
+    public boolean isOnHomepageByTitle() {
+        return BaseClass.isPageTitle("Your Store");
     }
 
     //Click on myAccountIcon
@@ -95,13 +103,24 @@ public class RegistrationPage extends BaseClass {
         continue_Button.click();
     }
 
+    //Click on the Continue button on post registration page
+    public void clickonmyAccountContinueButton() {
+        afterRegistration_Continue_Button.click();
+    }
+
     //verify successful registration message
     public boolean isRegisterationSuccessful() {
         return BaseClass.isDisplayed(successMessage);
 
     }
 
+    // verify the continue button is displayed after registration
     public boolean isafterRegistration_Continue_ButtonDisplayed() {
         return BaseClass.isDisplayed(afterRegistration_Continue_Button);
+    }
+
+    // Click on Logout button
+    public void clickOnLogout() {
+        logout_Button.click();
     }
 }

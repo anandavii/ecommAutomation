@@ -15,7 +15,7 @@ public class RegisterDef {
     //Step1. User navigates to the website
     @Given("User opens application homepage")
     public void user_opens_application_homepage() {
-        //registrationPage.clickOnMyAccount();
+        assertTrue("User is not on the homepage", registrationPage.isOnHomepageByTitle());
     }
     @When("User clicks on the MyAccount icon")
     public void user_clicks_on_the_MyAccount_icon() {
@@ -49,6 +49,16 @@ public class RegisterDef {
     @Then("User verified after registration Continue button is displayed")
     public void userVerifiedAfterRegistrationContinueButtonIsDisplayed() {
         assertTrue("Post Registration Continue button is not displayed", registrationPage.isafterRegistration_Continue_ButtonDisplayed());
+    }
+
+    @Then("User clicks on the myAccount Continue button")
+    public void user_clicks_on_the_my_account_continue_button() {
+        registrationPage.clickonmyAccountContinueButton();
+    }
+
+    @Then("User clicks on the Logout Button")
+    public void user_clicks_on_the_logout_button() {
+        registrationPage.clickOnLogout();
     }
 }
 

@@ -1,66 +1,51 @@
 package stepDefinition;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import pages.UserAccountPage;
+
+import java.util.List;
+
+import static org.junit.Assert.assertTrue;
 
 public class UserAccountDef {
+    private final UserAccountPage userAccountPage = new UserAccountPage();
+
     @Given("User is on My Account Page")
     public void user_is_on_my_account_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        assertTrue("User is not on the My Account", userAccountPage.isOnMyAccountByTitle());
     }
-    @Then("User clicks on the myAccount Continue button")
-    public void user_clicks_on_the_my_account_continue_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+    @Then("User must see the following labels on the My Account page")
+    public void user_must_see_the_following_labels_on_the_my_account_page(List<String> expectedLabels){
+        Assert.assertTrue("One or more labels are missing!", userAccountPage.verifyMyAccountLabels(expectedLabels));
     }
     @Then("User must see My Account label and following links")
-    public void user_must_see_my_account_label_and_following_links(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+    public void user_must_see_My_Account_label_and_following_links(List<String> expectedLinks) {
+        for (String link : expectedLinks) {
+            Assert.assertTrue("Link missing under My Account section: " + link, userAccountPage.verifyMyAccountLink(link));
+        }
     }
-    @Then("User must see My Orders label and following links")
-    public void user_must_see_my_orders_label_and_following_links(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+    @Then("User must see the following links under My Orders section")
+    public void user_must_see_My_Orders_section(List<String> expectedLinks) {
+        for (String link : expectedLinks) {
+            Assert.assertTrue("Link missing under My Orders section: " + link, userAccountPage.verifyMyOrdersLink(link));
+        }
     }
-    @Then("User must see My Affiliate Account label and following links")
-    public void user_must_see_my_affiliate_account_label_and_following_links(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+    @Then("User must see the following links under My Affiliate Account section")
+    public void user_must_see_My_Affiliate_Account_section(List<String> expectedLinks) {
+        for (String link : expectedLinks) {
+            Assert.assertTrue("Link missing under My Affiliate Account section: " + link, userAccountPage.verifyMyAffiliateLink(link));
+        }
     }
-    @Then("User must see Newsletter label and following links")
-    public void user_must_see_newsletter_label_and_following_links(io.cucumber.datatable.DataTable dataTable) {
-        // Write code here that turns the phrase above into concrete actions
-        // For automatic transformation, change DataTable to one of
-        // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
-        // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
-        // Double, Byte, Short, Long, BigInteger or BigDecimal.
-        //
-        // For other transformations you can register a DataTableType.
-        throw new io.cucumber.java.PendingException();
+
+    @Then("User must see the following links under Newsletter section")
+    public void user_must_see_Newsletter_section(List<String> expectedLinks) {
+        for (String link : expectedLinks) {
+            Assert.assertTrue("Link missing under Newsletter section: " + link, userAccountPage.verifyNewsletterLink(link));
+        }
     }
-    @Then("User clicks on the Logout Button")
-    public void user_clicks_on_the_logout_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
 }
