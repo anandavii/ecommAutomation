@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","9801","Login with valid credentials","","Mon Mar 03 00:08:12 CST 2025","passed","Mon Mar 03 00:08:21 CST 2025","","User Login","Login with valid credentials",""
+"","5416","User Navigates to the My Account page","","Mon Mar 03 00:08:28 CST 2025","passed","Mon Mar 03 00:08:34 CST 2025","","My Account page post successful User Registration","User Navigates to the My Account page",""
+"","6842","Successful User Registration","","Mon Mar 03 00:08:22 CST 2025","passed","Mon Mar 03 00:08:28 CST 2025","","New User Registration","Successful User Registration",""
