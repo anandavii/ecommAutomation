@@ -45,7 +45,7 @@ I have tried to structure this framework as a real-world industry-standard autom
 
 ## 🔜 Next Steps
 🔹 Automating **Add to Cart & Checkout Flow**  
-🔹 Implementing **Reporting Mechanism** (Extent Reports)  
+🔹 Implementing **Reporting Mechanism** 
 🔹 Enhancing **Test Data Management**  
 🔹 Adding **Cross-browser & Parallel Execution Support**
 
