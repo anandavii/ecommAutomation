@@ -18,7 +18,7 @@ I have tried to structure this framework as a real-world industry-standard autom
 - **Automation Tool:** Selenium WebDriver
 - **Test Framework:** Cucumber BDD
 - **Build Tool:** Maven
-- **Reporting:** Extent Reports (Planned)
+- **Reporting:** Allure Reports
 - **IDE:** IntelliJ
 ---
 
