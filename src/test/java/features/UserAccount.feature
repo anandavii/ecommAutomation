@@ -1,7 +1,13 @@
 Feature: My Account page post successful User Registration
 
   Scenario: User Navigates to the My Account page
-    Given User is on My Account Page
+    Given User opens application homepage
+    When User clicks on the MyAccount icon
+    And User clicks on the Login option
+    Then User should be navigated to the Login page
+    When User enters email "testceb4c05b-3bb6-42de-a1bf-a7bc6034a38a@myemail.com" and password "P@ssw0rd"
+    And User clicks on the Login button
+    Then User should be logged in successfully
     # Verifying Labels on the My Account page
     Then User must see the following labels on the My Account page
       | My Account        |

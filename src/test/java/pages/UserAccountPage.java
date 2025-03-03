@@ -37,7 +37,7 @@ public class UserAccountPage {
     @FindBy(xpath = "//a[text()='View your order history']")
     public WebElement viewOrderHistory_Link;
 
-    @FindBy(xpath = "//a[text()='Downloads']")
+    @FindBy(xpath = "(//a[contains(@href,'/download')])[2]")
     public WebElement downloads_Link;
 
     @FindBy(xpath = "//a[text()='Your Reward Points']")
@@ -72,11 +72,6 @@ public class UserAccountPage {
     //Initialize webelements
     public UserAccountPage() {
         PageFactory.initElements(BaseClass.getDriver(), this);
-    }
-
-    //check title of MyAccount page
-    public boolean isOnMyAccountByTitle() {
-        return BaseClass.isPageTitle("Your Account Has Been Created!");
     }
 
     // Verify labels on My Account page

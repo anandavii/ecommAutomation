@@ -13,7 +13,7 @@ public class RegisterDef {
     public RegistrationPage registrationPage = new RegistrationPage();
 
     //Step1. User navigates to the website
-    @Given("User opens application homepage")
+    @Given("^User opens application homepage$")
     public void user_opens_application_homepage() {
         assertTrue("User is not on the homepage", registrationPage.isOnHomepageByTitle());
     }

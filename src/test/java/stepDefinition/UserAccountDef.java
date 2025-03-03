@@ -8,15 +8,8 @@ import pages.UserAccountPage;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
-
 public class UserAccountDef {
     private final UserAccountPage userAccountPage = new UserAccountPage();
-
-    @Given("User is on My Account Page")
-    public void user_is_on_my_account_page() {
-        assertTrue("User is not on the My Account", userAccountPage.isOnMyAccountByTitle());
-    }
 
     @Then("User must see the following labels on the My Account page")
     public void user_must_see_the_following_labels_on_the_my_account_page(List<String> expectedLabels){
