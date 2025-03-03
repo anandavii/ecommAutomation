@@ -1,5 +1,4 @@
 Feature: My Account page post successful User Registration
-
   Scenario: User Navigates to the My Account page
     Given User opens application homepage
     When User clicks on the MyAccount icon
