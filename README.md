@@ -6,11 +6,11 @@ This is a **Selenium Cucumber-based Test Automation Framework** designed to vali
 
 ### ➠ Goals of this Framework
 
-✅ Automate critical user workflows such as **User Registration, Login, Account Management, and Checkout**. 
-✅ Ensure test scripts are **scalable** and can be easily extended for additional test cases. 
-✅ Provide **better readability and collaboration** through **Cucumber feature files**, making test cases understandable even for non-technical stakeholders. 
-✅ Facilitate **remote execution**, **parallel execution**, and **cross-browser testing** using **Dockerized Selenium Grid**. 
-✅ Generate **detailed test reports** using **Allure Reports** for better analysis of test execution results.
+✅ Automate critical user workflows such as **User Registration, Login, Account Management, and Checkout**.  
+✅ Ensure test scripts are **scalable** and can be easily extended for additional test cases.  
+✅ Provide **better readability and collaboration** through **Cucumber feature files**, making test cases understandable even for non-technical stakeholders.  
+✅ Facilitate **remote execution**, **parallel execution**, and **cross-browser testing** using **Dockerized Selenium Grid**.  
+✅ Generate **detailed test reports** using **Allure Reports** for better analysis of test execution results.  
 
 This framework is designed to simulate a real-world industry-standard automation suite, making it a robust and scalable solution for automating eCommerce applications efficiently.
 
@@ -136,9 +136,9 @@ Testing across different browsers for better coverage
 
 ## 🔜 Next Steps
 
-🔹 Automating **Add to Cart & Checkout Flow**
-🔹 Enhancing **Test Data Management**
-🔹 Adding **Cross-browser & Parallel Execution Support**
-🔹 Optimizing Allure tagging to avoid duplicate test entries
+🔹 Automating **Add to Cart & Checkout Flow**  
+🔹 Enhancing **Test Data Management**  
+🔹 Adding **Cross-browser & Parallel Execution Support**  
+🔹 Optimizing Allure tagging to avoid duplicate test entries  
 
 ---
