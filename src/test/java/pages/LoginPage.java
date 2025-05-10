@@ -7,7 +7,7 @@ import utility.BaseClass;
 
 import java.util.List;
 
-public class LoginPage {
+public class LoginPage extends BaseClass {
     //Locators for login Page
     @FindBy(xpath = "//a[text()='Login']")
     private WebElement Login_Link;
@@ -27,6 +27,10 @@ public class LoginPage {
     @FindBy(xpath = "//input[@value='Login']")
     private WebElement login_Button;
 
+    //My Account Label and links
+    @FindBy(xpath = "//h2[text()='My Account']")
+    public WebElement myAccount_Label;
+
     //Initialize the elements
     public LoginPage() {
         PageFactory.initElements(BaseClass.getDriver(), this);
@@ -34,6 +38,7 @@ public class LoginPage {
 
     //check title of my Account homepage
     public boolean isOnLoginpageByTitle() {
+        BaseClass.waitForElementToBeVisible(myAccount_Label,10);
         return BaseClass.isPageTitle("My Account");
     }
 

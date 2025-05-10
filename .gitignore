@@ -43,3 +43,7 @@ cucumber.json
 # ignore allure results
 target/allure-results/
 allure-report/
+
+
+#ignore docerfile
+.dockerignore

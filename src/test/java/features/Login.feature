@@ -1,3 +1,4 @@
+@Login
 Feature: User Login
   Scenario: Login with valid credentials
     Given User opens application homepage

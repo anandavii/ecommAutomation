@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features ={"src/test/java/features"} ,
         glue={"utility", "stepDefinition"} ,
+        tags = "@Login or @UserAccount",
         plugin = {"pretty", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"}
 
 )
