@@ -1,16 +1,16 @@
 # 🛒 eCommerce Test Automation Framework
 
-## 📝 Overview
+## Overview
 
 This is a **Selenium Cucumber-based Test Automation Framework** designed to validate the core functionalities of an **eCommerce web application**. The framework follows a structured **Page Object Model (POM)** and **Behavior-Driven Development (BDD) with Cucumber**, ensuring modularity, maintainability, and readability of test scripts.
 
-### ➠ Goals of this Framework
+### Goals of this Framework
 
-✅ Automate critical user workflows such as **User Registration, Login, Account Management, and Checkout**.  
-✅ Ensure test scripts are **scalable** and can be easily extended for additional test cases.  
-✅ Provide **better readability and collaboration** through **Cucumber feature files**, making test cases understandable even for non-technical stakeholders.  
-✅ Facilitate **remote execution**, **parallel execution**, and **cross-browser testing** using **Dockerized Selenium Grid**.  
-✅ Generate **detailed test reports** using **Allure Reports** for better analysis of test execution results.  
+- Automate critical user workflows such as **User Registration, Login, Account Management, and Checkout**.  
+- Ensure test scripts are **scalable** and can be easily extended for additional test cases.  
+- Provide **better readability and collaboration** through **Cucumber feature files**, making test cases understandable even for non-technical stakeholders.  
+-  Facilitate **remote execution**, **parallel execution**, and **cross-browser testing** using **Dockerized Selenium Grid**.  
+-  Generate **detailed test reports** using **Allure Reports** for better analysis of test execution results.  
 
 This framework is designed to simulate a real-world industry-standard automation suite, making it a robust and scalable solution for automating eCommerce applications efficiently.
 
@@ -62,11 +62,11 @@ This framework is designed to simulate a real-world industry-standard automation
 
 <h3> Docker + Selenium Grid Support <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker" height="20"/></h3>
 
-### ✅ Grid Setup (Remote Execution)
+### Grid Setup (Remote Execution)
 
 Selenium Grid is configured using Docker Compose on an **Ubuntu 20.04 LTS Linux VM**, hosted on **Microsoft Azure**, and accessed via public IP (e.g., `http://172.203.142.159:4444`).
 
-### ✅ Local Execution with Grid
+### Local Execution with Grid
 
 This setup is also compatible with **local Docker environments**. You can replicate the same Docker Compose setup locally with minimal changes for testing.
 
@@ -134,11 +134,11 @@ Testing across different browsers for better coverage
 
 ---
 
-## 🔜 Next Steps
+## Next Steps
 
-🔹 Automating **Add to Cart & Checkout Flow**  
-🔹 Enhancing **Test Data Management**  
-🔹 Adding **Cross-browser & Parallel Execution Support**  
-🔹 Optimizing Allure tagging to avoid duplicate test entries  
+- Automating **Add to Cart & Checkout Flow**  
+-  Enhancing **Test Data Management**  
+-  Adding **Cross-browser & Parallel Execution Support**  
+-  Optimizing Allure tagging to avoid duplicate test entries  
 
 ---
